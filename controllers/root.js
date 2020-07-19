@@ -13,7 +13,7 @@ const getRoot = async (req, res, next) => {//endpoint for get /
   res.json(getRequestData(req));
 };
 
-const postRoot = async (req, res, next) => {
+const postRoot = async (req, res, next) => { //async to return promise required by AsyncWrapper
   res.json(getRequestData(req));
 };
 
