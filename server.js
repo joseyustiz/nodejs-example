@@ -1,18 +1,13 @@
-
-const { server } = require("./config");
-const registerMiddlewares = require("./middlewares");
-var msg = require("./middlewares");
+import {server} from "./config";
+import { rootRouter } from "./routes";
+import registerMiddlewares from "./middlewares";
 
 async function main() {
- registerMiddlewares(server) ;
+    registerMiddlewares(server);
 
-server.get("/",   
-(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});//request handler
-server.post("/",(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});
-server.put("/",(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});
-server.delete("/",(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});
+    server.use("/v1", rootRouter);
 
-server.listen();
+    server.listen();
 }
 
 main();

@@ -1,11 +1,11 @@
-const helmet = require("helmet"); //Security http headers
-const cors = require("cors");
-const express = require("express");
-const basicAuth = require("express-basic-auth");
+import helmet from "helmet"; //Security http headers
+import cors from "cors";
+import express from "express";
+import basicAuth from "express-basic-auth";
 
 //dependency injection
 //applying middleware to any server, by registering the middleware functions to be executed 
-module.exports = server => {
+export default server => { //default export ES6
     // apply CORS
     server.use(cors());
     // apply HTTP security headers
