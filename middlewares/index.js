@@ -1,6 +1,6 @@
-import defaultMiddleware from "./default";
+const defaultMiddleware = require("./default");
 
 // register all middleware
-export default function registerMiddlewares(server) {
+module.exports = function registerMiddlewares(server) {
   defaultMiddleware(server);
-}
+};

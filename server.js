@@ -1,24 +1,18 @@
-import express from "express";
-const server = express();
-const PORT = process.ev.PORT  || 3000;
-async function main() {
-  // TODO: register middlewares (CORS...)
-  
-  // TODO: use router
-  // TODO: default express error handling middleware
-  server.listen(PORT, () => console.log(`listening for requests on port ${PORT}`));
-}
-main();
 
-import express from "express";
-const server = express();
-const PORT = process.ev.PORT  || 3000;
-async function main() {
-  // TODO: register middlewares (CORS...)
-  
-  // TODO: use router
-  // TODO: default express error handling middleware
-  server.listen(PORT, () => console.log(`listening for requests on port ${PORT}`));
-}
-main();
+const { server } = require("./config");
+const registerMiddlewares = require("./middlewares");
+var msg = require("./middlewares");
 
+async function main() {
+ registerMiddlewares(server) ;
+
+server.get("/",   
+(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});//request handler
+server.post("/",(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});
+server.put("/",(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});
+server.delete("/",(req, res, next) =>{res.json({message: `Handling ${req.method} request`})});
+
+server.listen();
+}
+
+main();
