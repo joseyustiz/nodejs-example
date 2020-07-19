@@ -1,0 +1,33 @@
+{
+  "name": "project-restful-nodejs12",
+  "version": "1.0.0",
+  "description": "Project to learn nodejs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs12",
+    "microservices",
+    "restful",
+    "api"
+  ],
+  "author": "Jose Yustiz",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "helmet": "^3.23.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "mocha": "^8.0.1",
+    "supertest": "^4.0.2"
+  }
+}
