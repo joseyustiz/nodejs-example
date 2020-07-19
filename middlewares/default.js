@@ -4,7 +4,7 @@ import express from "express";
 import basicAuth from "express-basic-auth";
 
 //dependency injection
-//applying midleware to any server, by registring the middleware funtions to be executed 
+//applying middleware to any server, by registering the middleware functions to be executed 
 export default server => {
     // apply CORS
     server.use(cors());
@@ -18,7 +18,7 @@ export default server => {
                 users: {
                     admin: "supersecret"
                 },
-                challenge: true //pront the dialog form for authentication
+                challenge: true //prompt the dialog form for authentication
             })
     );
     // handle request JSON body - no need to use body-parser lib anymore
